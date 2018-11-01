@@ -29,7 +29,9 @@ class Session
      */
     public function __construct()
     {
-        session_start();
+        if(!$this->isRegistered()){
+            session_start();
+        }
     }
 
     /**
